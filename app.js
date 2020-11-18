@@ -13,4 +13,16 @@ app.listen(port, () => {
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/fetchPaymentIntent/:amount', async(req, res)=> {
+
+    const amount = req.params.amount;
+    const paymentIntent = await stripe.paymentIntents.create({
+        amount: amount,
+        currency: 'gbp',
+        payment_method_types: ['card']
+    });
+
+    res.send({clientSecret: paymentIntent.client_secret});
+})
+
 module.exports = app;
