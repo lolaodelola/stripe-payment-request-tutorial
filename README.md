@@ -1,4 +1,4 @@
-#Stripe Payment Request Tutorial Boilerplate
+# Stripe Payment Request Tutorial Boilerplate
 
 ## Run Locally
 1. `git clone` this repo
