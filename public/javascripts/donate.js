@@ -1,4 +1,5 @@
 const stripe = Stripe('pk_test_qw1GN1EHv140IRz7N9Q6QcyX');
+// const stripe = Stripe('YOUR STRIPE PUBLISHABLE KEY');
 const elements = stripe.elements();
 
 function convertAmountToPence(amount){
