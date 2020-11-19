@@ -65,7 +65,7 @@ const pr = constructPaymentRequest(amount);
 const prBtn = constructPRButton(pr);
 mountPRButton(pr, prBtn);
 
-document.getElementById("donationAmount").addEventListener('change', () => {
+document.getElementById("donationAmount").addEventListener('input', () => {
     amount = convertAmountToPence(document.getElementById("donationAmount").value)
     pr.update({
         total: {
