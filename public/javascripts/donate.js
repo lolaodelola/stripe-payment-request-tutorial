@@ -7,7 +7,7 @@ function convertAmountToPence(amount){
 }
 
 function constructPaymentRequest(amount){
-    const paymentRequest = stripe.paymentRequest({
+    return stripe.paymentRequest({
         country: 'GB',
         currency: 'gbp',
         total: {
@@ -17,14 +17,12 @@ function constructPaymentRequest(amount){
         requestPayerName: true,
         requestPayerEmail: true
     });
-    return paymentRequest;
 }
 
 function constructPRButton(paymentRequest){
-    const paymentReqButton = elements.create('paymentRequestButton', {
+    return elements.create('paymentRequestButton', {
         paymentRequest,
     });
-    return paymentReqButton;
 }
 
 async function mountPRButton(paymentRequest, paymentReqButton){
